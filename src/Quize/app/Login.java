@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Login extends JFrame implements ActionListener  {
+public class Login extends JFrame implements ActionListener,FocusListener  {
     JButton rules;
     JButton back;
     JTextField tfname;
@@ -37,6 +37,8 @@ public class Login extends JFrame implements ActionListener  {
         name.setForeground(Color.black);
         add(name);
 
+
+
         //For Entering the Name:
         tfname=new JTextField();
         tfname.setBounds(725,250,300,25);
@@ -61,6 +63,18 @@ public class Login extends JFrame implements ActionListener  {
         setLocationRelativeTo(null);
         setUndecorated(true);
         setVisible(true);
+
+        addFocusListener(this);
+    }
+    public void focusGained(FocusEvent e){
+        if(!(e.getSource() != tfname))
+        {
+            tfname.setBackground(Color.yellow);
+        }
+    }
+    public void focusLost(FocusEvent e){
+
+
     }
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource()==rules){

@@ -222,7 +222,7 @@ import java.awt.event.ActionListener;
                 }
 
              for(int i=0;i<useranswer.length;i++){
-                 if(useranswer[i][0].equals(answers[i][1])){
+                 if(useranswer[i][0].equals(answers[i][0])){
                      score +=10;
 
                  }else{
